@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    Inicio
+    Blog
 @endsection
 
 @section('content')
 
-<h1>Inicio</h1>
+<h1>Blog</h1>
     
 @endsection
-    
-    
