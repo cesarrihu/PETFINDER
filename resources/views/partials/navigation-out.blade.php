@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-success" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active text-success" aria-current="page" href="{{route('welcome')}}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-success" href="#">Nosotros</a>
+            <a class="nav-link text-success" href="{{route('about')}}">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-success" href="#">Contacto</a>
