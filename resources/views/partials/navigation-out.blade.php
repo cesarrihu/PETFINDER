@@ -16,7 +16,7 @@
             <a class="nav-link text-success" href="{{route('about')}}">Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-success" href="#">Contacto</a>
+            <a class="nav-link text-success" href="{{route('contact')}}">Contacto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Adopta...</a>
