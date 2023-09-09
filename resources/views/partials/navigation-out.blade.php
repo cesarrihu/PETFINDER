@@ -16,7 +16,7 @@
             <a class="nav-link text-success" href="{{route('about')}}">Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-success" href="{{route('contact')}}">Contacto</a>
+            <a class="nav-link text-success" href="{{route('Help')}}">Ayudanos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Adopta...</a>
@@ -24,10 +24,10 @@
         </ul>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link text-success" href="#">Iniciar Sesion</a>
+                <a class="nav-link text-success" href="{{route('login')}}">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-success" href="#">Registrarse</a>
+                <a class="nav-link text-success" href="{{route('registro')}}">Registrarse</a>
               </li>
         </ul>
                     

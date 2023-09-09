@@ -43,7 +43,7 @@
             En PetFinder, trabajamos día a día con el objetivo de marcar la diferencia en la vida de los animales necesitados y construir un mundo en el que todos los seres vivos gocen de un trato digno y compasivo. Nos enorgullece nuestra labor y estamos agradecidos por el apoyo de nuestros voluntarios, donantes y la comunidad en general que comparte nuestra visión. Juntos, estamos creando un futuro mejor para los animales.
           </p>
         </div>
-        <div class="col-4 ms-auto">
+        <div class="col-4 ms-auto d-none d-lg-block">
           <p class="h2 text-right">Nuestro Fundador:</p>
           
           <div class="card mt-5" style="width: 18rem;">
