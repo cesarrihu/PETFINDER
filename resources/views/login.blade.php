@@ -32,11 +32,11 @@
 
                 <div class="mb-4">
                     <label for="email" class="form-label">correo electronico</label>
-                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email">
+                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" required>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="form-label">contraseña</label>
-                    <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password">
+                    <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
                 </div>
 
                 <div class="d-grid">

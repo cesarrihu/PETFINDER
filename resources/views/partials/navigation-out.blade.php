@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary bg-warning border-3 border-bottom border-success">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{{route('welcome')}}">
         <img src="{{asset('img/logo.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         PetFinder
       </a>
@@ -10,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active text-success" aria-current="page" href="{{route('welcome')}}">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-success" href="{{route('about')}}">Nosotros</a>
+            <a class="nav-link" href="{{route('about')}}">Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-success" href="{{route('Help')}}">Ayudanos</a>
+            <a class="nav-link " href="{{route('Help')}}">Ayudanos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Adopta...</a>
@@ -24,10 +24,10 @@
         </ul>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link text-success" href="{{route('login')}}">Iniciar Sesion</a>
+                <a class="nav-link " href="{{route('login')}}">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-success" href="{{route('registro')}}">Registrarse</a>
+                <a class="nav-link" href="{{route('registro')}}">Registrarse</a>
               </li>
         </ul>
                     
