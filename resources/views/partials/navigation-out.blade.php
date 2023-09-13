@@ -10,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Inicio</a>
+            <a class="nav-link {{ request()->route()->getName() === 'welcome' ? 'active' : '' }}" aria-current="page" href="{{route('welcome')}}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('about')}}">Nosotros</a>
+            <a class="nav-link {{ request()->route()->getName() === 'about' ? 'active' : '' }}" href="{{route('about')}}">Nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{route('Help')}}">Ayudanos</a>
+            <a class="nav-link {{ request()->route()->getName() === 'Help' ? 'active' : '' }} " href="{{route('Help')}}">Ayudanos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Adopta...</a>
@@ -24,10 +24,10 @@
         </ul>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link " href="{{route('login')}}">Iniciar Sesion</a>
+                <a class="nav-link {{ request()->route()->getName() === 'login' ? 'active' : '' }}" href="{{route('login')}}">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{route('registro')}}">Registrarse</a>
+                <a class="nav-link {{ request()->route()->getName() === 'registro' ? 'active' : '' }}" href="{{route('registro')}}">Registrarse</a>
               </li>
         </ul>
                     

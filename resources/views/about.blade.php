@@ -94,8 +94,8 @@
     </div>
 
     <div class="container text-center mt-5">
-    <div class="row align-items-start">
-      <div class="col">
+    <div class="row align-items-center">
+      <div class="col d-none d-md-block">
         <div class="card" style="width: 18rem;">
   <img src="{{asset('img/gallery-5.jpg')}}" class="card-img-top" alt="...">
   <div class="card-body">
@@ -111,7 +111,7 @@
   </div>
 </div>
       </div>
-      <div class="col">
+      <div class="col d-none d-lg-block">
         <div class="card" style="width: 18rem;">
   <img src="{{asset('img/gallery-7.jpg')}}" class="card-img-top" alt="...">
   <div class="card-body">

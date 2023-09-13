@@ -59,7 +59,7 @@
                       </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
+                      <div class=" accordion-body">
                         <strong>Compañía y afecto:</strong> Las mascotas, como los perros y gatos, a menudo están dispuestas a pasar tiempo contigo y proporcionar afecto incondicional. Esta compañía puede ser especialmente valiosa para personas que viven solas o que experimentan sentimientos de soledad.
                         El contacto físico con las mascotas, como acariciar a un gato o abrazar a un perro, libera hormonas como la oxitocina y la dopamina, que promueven sentimientos de felicidad y reducen el estrés y la ansiedad.
                       </div>

@@ -50,7 +50,7 @@
   </div>
 </div>
       </div>
-      <div class="col">
+      <div class="col d-none d-md-block">
         <div class="card" style="width: 18rem;">
   <img src="{{asset('img/gallery-1.jpg')}}" class="card-img-top" alt="...">
   <div class="card-body">
@@ -58,7 +58,7 @@
   </div>
 </div>
       </div>
-      <div class="col">
+      <div class="col d-none d-xl-block">
         <div class="card" style="width: 18rem;">
   <img src="{{asset('img/gallery-4.jpg')}}" class="card-img-top" alt="...">
   <div class="card-body">
@@ -66,7 +66,7 @@
   </div>
 </div>
       </div>
-      <div class="col">
+      <div class="col d-none d-xxl-block">
         <div class="card" style="width: 18rem;">
   <img src="{{asset('img/gallery-3.jpg')}}" class="card-img-top" alt="...">
   <div class="card-body">
