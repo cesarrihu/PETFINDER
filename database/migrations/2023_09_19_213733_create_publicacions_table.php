@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('raza');
-            $table->text('descipcion');
-            $table->integer('edad');
+            $table->text('descripcion');
+            $table->string('edad');
             $table->string('color')->nullable();
             $table->timestamps();
         });

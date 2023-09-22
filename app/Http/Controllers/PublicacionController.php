@@ -12,7 +12,9 @@ class PublicacionController extends Controller
      */
     public function index()
     {
-        return view('publicacion/publicacion-index');
+        $publicaciones = Publicacion::orderby('id', 'desc')->get();
+    
+        return view('publicacion/publicacion-index', compact('publicaciones'));
     }
 
     /**
@@ -20,7 +22,7 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        //
+        return view('publicacion/publicacion-create');
     }
 
     /**
@@ -28,15 +30,33 @@ class PublicacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $publicacion = new Publicacion();
+
+        $publicacion->nombre = $request->nombre;
+        $publicacion->raza = $request->raza;
+        $publicacion->descripcion = $request->descripcion;
+        $publicacion->edad = $request->edad;
+        $publicacion->color = $request->color;
+
+        $publicacion->save();
+
+        return redirect()->route('publicacion.index');
+
+       // return view('publicacion/publicacion-store');
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Publicacion $publicacion)
+    public function show(Publicacion $publicacion) //   
     {
-        //
+       // $publicacion = new Publicacion;
+        //dd ($publicacion);
+        return view('publicacion/publicacion-show', compact('publicacion'));
+
+        //$publicacion = Publicacion::find($id);
+        //return $publicacion;
     }
 
     /**

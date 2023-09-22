@@ -21,3 +21,5 @@ Route::view('/start', 'start')->name('start');
 
 Route::resource('/publicacion', PublicacionController::class);
 
+
+
