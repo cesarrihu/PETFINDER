@@ -64,7 +64,7 @@ class PublicacionController extends Controller
      */
     public function edit(Publicacion $publicacion)
     {
-        //
+        return view('publicacion/publicacion-edit', compact('publicacion'));
     }
 
     /**
@@ -72,7 +72,15 @@ class PublicacionController extends Controller
      */
     public function update(Request $request, Publicacion $publicacion)
     {
-        //
+        $publicacion->nombre = $request->nombre;
+        $publicacion->raza = $request->raza;
+        $publicacion->descripcion = $request->descripcion;
+        $publicacion->edad = $request->edad;
+        $publicacion->color = $request->color;
+
+        $publicacion->save();
+
+        return redirect()->route('publicacion.index');
     }
 
     /**
@@ -80,6 +88,7 @@ class PublicacionController extends Controller
      */
     public function destroy(Publicacion $publicacion)
     {
-        //
+        $publicacion->delete();
+        return redirect()->route('publicacion.index');
     }
 }
