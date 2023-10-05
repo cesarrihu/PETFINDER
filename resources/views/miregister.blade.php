@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('title')
     Registro
@@ -27,34 +27,34 @@
 
             <h2 class="fw-bold text-center pt-3 mb-3">Registro</h2>
 
-            <form action="#" method="POST">
+            <x-validation-errors class="mb-4" />
+
+            <form action="{{ route('register') }}" method="POST">
+
+                @csrf
 
                 <div class="mb-4">
-                    <label for="email" class="form-label">correo electronico</label>
-                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" required>
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="form-label">contraseña</label>
-                    <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
-                </div>
-                <div class="mb-4">
-                    <label for="name" class="form-label">Nombre Completo</label>
+                    <label for="name" class="form-label" value="{{ __('Name') }}">Nombre Completo</label>
                     <input type="text" placeholder="Tu nombre" class="form-control bg-success-subtle" name="name" required>
                 </div>
                 <div class="mb-4">
-                    <label for="direccion" class="form-label">Direccion</label>
-                    <input type="text" placeholder="Tu direccion" class="form-control bg-success-subtle" name="direccion" required>
+                    <label for="email" class="form-label" value="{{ __('Email') }}">correo electronico</label>
+                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" required>
                 </div>
                 <div class="mb-4">
-                    <label for="age" class="form-label">Edad</label>
-                    <input type="text" placeholder="Tu Edad" class="form-control bg-success-subtle" name="age" required>
+                    <label for="password" class="form-label" value="{{ __('Password') }}">contraseña</label>
+                    <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
                 </div>
-
+                <div class="mb-4">
+                    <label for="password_confirmation" class="form-label" value="{{ __('Confirm Password') }}"> confirmar contraseña</label>
+                    <input type="password" placeholder="confirma tu contraseña aqui" class="form-control bg-success-subtle" name="password_confirmation" required>
+                </div>
+                
                 <div class="d-grid">
                     <button type="submit" class="btn btn-success">Registrarse</button>
                 </div>
                 <div class="my-3">
-                    <span>Ya tienes cuenta? <a href="{{route('login')}}"> Iniciar Sesion</a></span>
+                    <span>Ya tienes cuenta? <a href="{{route('milogin')}}"> Iniciar Sesion</a></span>
                 </div>
                 <div class="my-3">
                     <p>Recuerda que esta informacion solo sera utilizada para la seguridad de la adopcion.</p>

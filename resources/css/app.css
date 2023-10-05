@@ -1,5 +1,7 @@
-.imagetext h1{
-  color: darkgreen;
-  position: absolute;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+[x-cloak] {
+    display: none;
+}

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('title')
     Inicio de sesion
@@ -16,6 +16,7 @@
     }
 </style>
 
+
 <div class="container w-75 mt-5 rounded shadow mb-5">
     <div class="row align-items-stretch">
         <div class="col bg1 d-none d-lg-block">
@@ -28,14 +29,18 @@
 
             <h2 class="fw-bold text-center pt-5 mb-5">Bienvenido</h2>
 
-            <form action="#" method="POST">
+            <x-validation-errors class="mb-4" />
+
+            <form action="{{ route('login') }}" method="POST">
+
+                @csrf
 
                 <div class="mb-4">
-                    <label for="email" class="form-label">correo electronico</label>
-                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" required>
+                    <label for="email" class="form-label" value="{{ __('Email') }}">correo electronico</label>
+                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" :value="old('email')" required autofocus>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label">contraseña</label>
+                    <label for="password" class="form-label" value="{{ __('Password') }}">contraseña</label>
                     <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
                 </div>
 
@@ -43,7 +48,13 @@
                     <button type="submit" class="btn btn-success">Iniciar Sesion</button>
                 </div>
                 <div class="my-3">
-                    <span>No tienes cuenta? <a href="{{route('registro')}}"> Registrarse</a></span>
+                    <span>No tienes cuenta? <a href="{{route('miregistro')}}"> Registrarse</a></span>
+
+                    @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 ms-5" href="{{ route('password.request') }}">
+                        {{ __('Olvidaste tu contraseña?') }}
+                    </a>
+                @endif
                 </div>
             </form>
 
