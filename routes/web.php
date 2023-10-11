@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +19,14 @@ Route::view('/miregistro', 'miregister')->name('miregistro');
 Route::view('/milogin', 'milogin')->name('milogin');
 
 Route::view('/start', 'start')->name('start');
+
+Route::resource('/publicacion', PublicacionController::class);
+
+
+
+Route::resource('/publicacion', PublicacionController::class);
+
+
 
 Route::resource('/product', ProductController::class);
 
