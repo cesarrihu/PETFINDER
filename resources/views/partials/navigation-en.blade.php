@@ -17,9 +17,10 @@
               Mascotas
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Todas las mascotas</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="{{route('publicacion.index')}}">Todas las mascotas</a></li>
+              <li><a class="dropdown-item" href="#">Canino</a></li>
+              <li><a class="dropdown-item" href="#">Felino</a></li>
+              <li><a class="dropdown-item" href="{{route('publicacion.create')}}">Crear mascota</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

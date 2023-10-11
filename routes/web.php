@@ -22,12 +22,6 @@ Route::view('/start', 'start')->name('start');
 
 Route::resource('/publicacion', PublicacionController::class);
 
-
-
-Route::resource('/publicacion', PublicacionController::class);
-
-
-
 Route::resource('/product', ProductController::class);
 
 Route::middleware([

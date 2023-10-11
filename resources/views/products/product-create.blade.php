@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petfinder-crea-producto</title>
-</head>
-<body>
+@extends('layouts.app3')
+
+@section('title')
+    crear producto
+@endsection
+
+@section('content')
+    
+    <div class="container w-50  mt-5 rounded shadow mb-5 border-3 border-success">
     <h1>Formulario para crear productos</h1>
 
-    <form action="{{route('product.store')}}" method="POST">
+    <form class="mt-5" action="{{route('product.store')}}" method="POST">
                 @csrf
                 <div class="mb-4">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -36,6 +36,5 @@
                     <p>Recuerda que esta informacion será visible para todos los usuarios</p>
                 </div>
             </form>
-
-</body>
-</html>
+        </div>
+ @endsection
