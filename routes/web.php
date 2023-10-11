@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-Route::view('/', 'welcome')->name('welcome');
+Route::view('/', 'miwelcome')->name('miwelcome');
 
 Route::view('/Help', 'Help')->name('Help');
 
@@ -12,9 +12,19 @@ Route::view('/about', 'about')->name('about');
 
 Route::view('/blog', 'blog')->name('blog');
 
-Route::view('/registro', 'register')->name('registro');
+Route::view('/miregistro', 'miregister')->name('miregistro');
 
-Route::view('/login', 'login')->name('login');
+Route::view('/milogin', 'milogin')->name('milogin');
 
 Route::view('/start', 'start')->name('start');
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
