@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
 class ProductController extends Controller
 {
     /**
@@ -30,6 +31,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $product = new Product();
 
         $product->nombre = $request->nombre;
@@ -64,6 +66,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+       
         $product->nombre = $request->nombre;
         $product->descripcion = $request->descripcion;
         $product->precio = $request->precio;

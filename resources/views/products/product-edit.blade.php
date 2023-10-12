@@ -11,7 +11,7 @@
         
         <img src="{{asset('img/logo.png')}}" alt="Tu Logo" class="img-fluid mt-3" style="max-width: 50px;">
         <h2 class="fw-bold text-center   mb-3">Edita el producto:</h2>
-
+     
         <form action="{{ route('product.update', $product) }}" method="POST">
             @csrf
             @method('PATCH')
