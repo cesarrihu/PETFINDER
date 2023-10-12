@@ -36,7 +36,7 @@
                 @csrf
 
                 <div class="mb-4">
-                    <label for="email" class="form-label">correo electronico</label>
+                    <label for="email" class="form-label" value="{{ old('email') }}">correo electronico</label>
                     <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" value="{{old('email')}}" required autofocus>
                 </div>
                 <div class="mb-4">
