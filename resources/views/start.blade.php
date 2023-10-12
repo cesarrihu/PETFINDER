@@ -1,11 +1,20 @@
 @extends('layouts.app3')
 
 @section('title')
-    Bienvenido
 @endsection
-
+<style>
+    .background-image {
+ background-image: url('/img/startImage.png'); /* Ajusta la ruta de la imagen según tu ubicación */
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ width: 95%;
+ height: 100vh;
+}
+ </style>
 @section('content')
 
-<h1>Bienvenido</h1>
-    
+    <div class="background-image">
+    </div>
 @endsection
+

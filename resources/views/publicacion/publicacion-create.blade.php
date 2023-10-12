@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creacion de publicaciones</title>
-</head>
-<body>
-    <h1>Formulario para crear publicaciones</h1>
+@extends('layouts.app3')
 
-    <form action="{{route('publicacion.store')}}" method="POST">
+@section('title')
+    crear publicacion
+@endsection
+
+@section('content')
+    
+    <div class="container w-50 mt-5 rounded shadow mb-5 border border-success border-3 bg-success-subtle">
+    <div class="container w-90 mt-3 rounded shadow  bg-white">
+    
+        <img src="{{asset('img/logo.png')}}" alt="Tu Logo" class="img-fluid mt-3" style="max-width: 50px;">
+    
+        <h2 class="fw-bold text-center  mb-3 ">Formulario para crear publicaciones</h2>
+    
+            <form action="{{route('publicacion.store')}}" method="POST">
                 @csrf
                 <div class="mb-4">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -40,6 +44,7 @@
                     <p>Recuerda que esta informacion será visible para todos los usuarios</p>
                 </div>
             </form>
+        </div>
+        </div>
 
-</body>
-</html>
+ @endsection
