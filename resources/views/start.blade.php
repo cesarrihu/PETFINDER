@@ -1,7 +1,9 @@
 @extends('layouts.app3')
 
 @section('title')
+ Bienvenido
 @endsection
+
 <style>
     .background-image {
         background-image: url('/img/startImage2.png'); 
