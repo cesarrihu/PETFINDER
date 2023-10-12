@@ -17,7 +17,7 @@
                     </div>
                     <h1 class="card-title d-flex justify-content-center">Nombre: {{$product->nombre}}</h1>
                     <h2 class="card-subtitle mb-2 d-flex justify-content-center">Descripción: {{$product->descripcion}}</h2>
-                    <h2 class="card-subtitle mb-2 d-flex justify-content-center">Precio: {{$product->precio}}</h2>
+                    <h2 class="card-subtitle mb-2 d-flex justify-content-center">Precio: ${{$product->precio}}</h2>
                     <h2 class="card-subtitle mb-5 d-flex justify-content-center">Color: {{$product->color}}</h2>
                     <div class="container w-100 mb-3">
                         <div class="card-foteer d-flex justify-content-center ms-5">

@@ -11,6 +11,17 @@
             
             <img src="{{asset('img/logo.png')}}" alt="Tu Logo" class="img-fluid mt-3" style="max-width: 50px;">
             <h2 class="fw-bold text-center   mb-3">Modificar publicacion</h2>
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
             <form action="{{route('publicacion.update', $publicacion)}}" method="POST">
                         @csrf
                         @method('PATCH')

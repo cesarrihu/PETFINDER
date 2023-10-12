@@ -30,20 +30,25 @@ class PublicacionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'raza' => 'required',
+            'descripcion' => 'required',
+            'edad' => 'required|integer', 
+            'color' => 'nullable',
+        ]);
+    
         $publicacion = new Publicacion();
-
-        $publicacion->nombre = $request->nombre;
-        $publicacion->raza = $request->raza;
-        $publicacion->descripcion = $request->descripcion;
-        $publicacion->edad = $request->edad;
-        $publicacion->color = $request->color;
-
+    
+        $publicacion->nombre = $request->input('nombre');
+        $publicacion->raza = $request->input('raza');
+        $publicacion->descripcion = $request->input('descripcion');
+        $publicacion->edad = $request->input('edad');
+        $publicacion->color = $request->input('color');
+    
         $publicacion->save();
-
+    
         return redirect()->route('publicacion.index');
-
-       // return view('publicacion/publicacion-store');
-        
     }
 
     /**
@@ -72,14 +77,23 @@ class PublicacionController extends Controller
      */
     public function update(Request $request, Publicacion $publicacion)
     {
-        $publicacion->nombre = $request->nombre;
-        $publicacion->raza = $request->raza;
-        $publicacion->descripcion = $request->descripcion;
-        $publicacion->edad = $request->edad;
-        $publicacion->color = $request->color;
-
+        
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'raza' => 'required',
+            'descripcion' => 'required',
+            'edad' => 'required|integer', 
+            'color' => 'nullable',
+        ]);
+        
+        $publicacion->nombre = $request->input('nombre');
+        $publicacion->raza = $request->input('raza');
+        $publicacion->descripcion = $request->input('descripcion');
+        $publicacion->edad = $request->input('edad');
+        $publicacion->color = $request->input('color');
+    
         $publicacion->save();
-
+    
         return redirect()->route('publicacion.index');
     }
 

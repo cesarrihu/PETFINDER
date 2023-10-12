@@ -4,14 +4,20 @@
 @endsection
 <style>
     .background-image {
- background-image: url('/img/startImage.png'); /* Ajusta la ruta de la imagen según tu ubicación */
- background-size: cover;
- background-position: center center;
- background-repeat: no-repeat;
- width: 95%;
- height: 100vh;
-}
- </style>
+        background-image: url('/img/startImage2.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%; 
+        height: 100vh;
+    }
+
+    @media (max-width: 768px) {
+        .background-image {
+            background-size: contain; 
+        }
+    }
+</style>
 @section('content')
 
     <div class="background-image d-flex">

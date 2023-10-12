@@ -25,7 +25,7 @@
                                     <p class="card-text">Descripcion: {{ $publicacion->descripcion }}</p>
                                 </div>
                                 <div class="card-body  d-flex justify-content-center">
-                                    <p class="card-text"><strong>Edad: {{ $publicacion->edad }}</strong></p>
+                                    <p class="card-text"><strong>Edad: {{ $publicacion->edad }} año(s)</strong></p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-center">
                                     <a href="{{ route('publicacion.show', $publicacion->id) }}" class="btn btn-success">Ver

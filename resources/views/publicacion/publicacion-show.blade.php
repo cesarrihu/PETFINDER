@@ -21,7 +21,7 @@
                     <h2 class="card-subtitle mt-2 mb-2  d-flex justify-content-center ms-3">Descripción: {{$publicacion->descripcion}}</h2>
                     <h2 class="card-subtitle mb-2 d-flex justify-content-center">Color: {{$publicacion->color}}</h2>
                     <h2 class="card-subtitle mb-2 d-flex justify-content-center">Raza: {{$publicacion->raza}}</h2>
-                    <h2 class="card-subtitle mb-2 d-flex justify-content-center mb-5">Edad: {{$publicacion->edad}}</h2>
+                    <h2 class="card-subtitle mb-2 d-flex justify-content-center mb-5">Edad: {{$publicacion->edad}} años</h2>
                     <div class="container">
                         <div class=" card-footer d-flex justify-content-center ms-5">
                             <div class="col-4 ms-5">
