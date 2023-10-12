@@ -12,23 +12,33 @@
     <img src="{{asset('img/logo.png')}}" alt="Tu Logo" class="img-fluid mt-3" style="max-width: 50px;">
     <h2 class="fw-bold text-center  mb-3 ">Crea el producto:</h2>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form class="mt-3" action="{{ route('product.store') }}" method="POST">
         @csrf
         <div class="mb-2">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" placeholder="correa de cuero" class="form-control bg-success-subtle" name="nombre" required>
+            <input type="text" placeholder="correa de cuero" class="form-control bg-success-subtle" name="nombre" value="{{ old('nombre') }}" required>
         </div><br>
         <div class="mb-2">
             <label for "descripcion" class="form-label">Descripción</label> <br>
-            <textarea type="text" placeholder="Datos acerca del producto" class="form-control bg-success-subtle" name="descripcion" cols="30" rows="10" required></textarea>
+            <textarea type="text" placeholder="Datos acerca del producto" class="form-control bg-success-subtle" name="descripcion" cols="30" rows="10" required>{{ old('descripcion') }}</textarea>
         </div><br>
         <div class="mb-2">
             <label for="precio" class="form-label">Precio</label>
-            <input type="text" placeholder="$100" class="form-control bg-success-subtle" name="precio" required>
+            <input type="text" placeholder="$100" class="form-control bg-success-subtle" name="precio" value="{{ old('precio') }}" required>
         </div><br>
         <div class="mb-2">
             <label for="color" class="form-label">Color</label>
-            <input type="text" placeholder="Rojo" class="form-control bg-success-subtle" name="color" required>
+            <input type="text" placeholder="Rojo" class="form-control bg-success-subtle" name="color" value="{{ old('color') }}" required>
         </div><br>
 
         <div class="d-grid">

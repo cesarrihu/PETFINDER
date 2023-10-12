@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->text('descripcion');
-            $table->string('precio');
+            $table->decimal('precio');
             $table->string('color')->nullable();
             $table->timestamps();
         });

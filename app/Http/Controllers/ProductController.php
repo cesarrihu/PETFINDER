@@ -30,12 +30,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'descripcion' => 'required',
+            'precio' => 'required|numeric|regex:/^\d+(\.\d{1,2})?$/', 
+            'color' => 'nullable',
+        ]);
+
         $product = new Product();
 
-        $product->nombre = $request->nombre;
-        $product->descripcion = $request->descripcion;
-        $product->precio = $request->precio;
-        $product->color = $request->color;
+        $product->nombre = $request->input('nombre');;
+        $product->descripcion = $request->input('descripcion');
+        $product->precio = $request->input('precio');
+        $product->color = $request->input('color');
 
         $product->save();
 
@@ -64,10 +71,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->nombre = $request->nombre;
-        $product->descripcion = $request->descripcion;
-        $product->precio = $request->precio;
-        $product->color = $request->color;
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'descripcion' => 'required',
+            'precio' => 'required|numeric|regex:/^\d+(\.\d{1,2})?$/', 
+            'color' => 'nullable',
+        ]);
+
+        $product->nombre = $request->input('nombre');;
+        $product->descripcion = $request->input('descripcion');
+        $product->precio = $request->input('precio');
+        $product->color = $request->input('color');
 
         $product->save();
 

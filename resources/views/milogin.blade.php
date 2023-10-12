@@ -36,11 +36,11 @@
                 @csrf
 
                 <div class="mb-4">
-                    <label for="email" class="form-label" value="{{ __('Email') }}">correo electronico</label>
+                    <label for="email" class="form-label" value="{{ old('email') }}">correo electronico</label>
                     <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" :value="old('email')" required autofocus>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label" value="{{ __('Password') }}">contraseña</label>
+                    <label for="password" class="form-label" value="{{ old('password') }}">contraseña</label>
                     <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
                 </div>
 

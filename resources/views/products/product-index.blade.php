@@ -25,7 +25,7 @@
                                     <p class="card-text">Descripcion: {{ $product->descripcion }}</p>
                                 </div>
                                 <div class="card-body  d-flex justify-content-center">
-                                    <p class="card-text"><strong>Precio: {{ $product->precio }}</strong></p>
+                                    <p class="card-text"><strong>Precio: ${{ $product->precio }}</strong></p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-center">
                                     <a href="{{ route('product.show', $product->id) }}" class="btn btn-success">Ver

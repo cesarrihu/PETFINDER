@@ -34,20 +34,20 @@
                 @csrf
 
                 <div class="mb-4">
-                    <label for="name" class="form-label" value="{{ __('Name') }}">Nombre Completo</label>
-                    <input type="text" placeholder="Tu nombre" class="form-control bg-success-subtle" name="name" required>
+                    <label for="name" class="form-label" >Nombre Completo</label>
+                    <input type="text" placeholder="Tu nombre" class="form-control bg-success-subtle" name="name" value="{{ old('name') }}" required>
                 </div>
                 <div class="mb-4">
-                    <label for="email" class="form-label" value="{{ __('Email') }}">correo electronico</label>
-                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" required>
+                    <label for="email" class="form-label" value="{{ old('email') }}">correo electronico</label>
+                    <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" value="{{ old('email') }}" required>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label" value="{{ __('Password') }}">contraseña</label>
-                    <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
+                    <label for="password" class="form-label" >contraseña</label>
+                    <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" value="{{ old('password') }}" required>
                 </div>
                 <div class="mb-4">
-                    <label for="password_confirmation" class="form-label" value="{{ __('Confirm Password') }}"> confirmar contraseña</label>
-                    <input type="password" placeholder="confirma tu contraseña aqui" class="form-control bg-success-subtle" name="password_confirmation" required>
+                    <label for="password_confirmation" class="form-label" > confirmar contraseña</label>
+                    <input type="password" placeholder="confirma tu contraseña aqui" class="form-control bg-success-subtle" name="password_confirmation" value="{{ old('password_confirmation') }}"required>
                 </div>
                 
                 <div class="d-grid">
