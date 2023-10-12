@@ -40,7 +40,7 @@
                     <input type="email" placeholder="usuario@ejemplo.com" class="form-control bg-success-subtle" name="email" value="{{old('email')}}" required autofocus>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label" value="{{ old('password') }}">contraseña</label>
+                    <label for="password" class="form-label">contraseña</label>
                     <input type="password" placeholder="ingresa tu contraseña aqui" class="form-control bg-success-subtle" name="password" required>
                 </div>
 
