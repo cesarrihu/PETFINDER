@@ -10,20 +10,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="container w-100 rounded shadow mb-5 border border-success border-3 bg-success-subtle d-flex justify-content-center">
-                <div class="card-body">
+                
+                <div class="card-body bg-white mt-3 mb-3">
                     <div class="container mt-5 mb-5">
                         <img src="{{ asset('img/image_3.jpg') }}" class="card-img-top"
                         alt="aqui va la imagen de la mascota">
                     </div>
 
-                    <h1 class="card-title text-muted d-flex justify-content-center">Nombre: {{$publicacion->nombre}}</h1>
-                    <h2 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Descripción: {{$publicacion->descripcion}}</h2>
-                    <h2 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Color: {{$publicacion->color}}</h2>
-                    <h2 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Raza: {{$publicacion->raza}}</h2>
-                    <h2 class="card-subtitle mb-2 text-muted d-flex justify-content-center mb-5">Edad: {{$publicacion->edad}}</h2>
+                    <h1 class="card-title  d-flex justify-content-center">Nombre: {{$publicacion->nombre}}</h1>
+                    <h2 class="card-subtitle mt-2 mb-2  d-flex justify-content-center ms-3">Descripción: {{$publicacion->descripcion}}</h2>
+                    <h2 class="card-subtitle mb-2 d-flex justify-content-center">Color: {{$publicacion->color}}</h2>
+                    <h2 class="card-subtitle mb-2 d-flex justify-content-center">Raza: {{$publicacion->raza}}</h2>
+                    <h2 class="card-subtitle mb-2 d-flex justify-content-center mb-5">Edad: {{$publicacion->edad}}</h2>
                     <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-4">
+                        <div class=" card-footer d-flex justify-content-center ms-5">
+                            <div class="col-4 ms-5">
                                 <a href="{{ route('publicacion.index') }}" class="btn btn-primary">Volver a las publicaciones</a>
                             </div>
 
