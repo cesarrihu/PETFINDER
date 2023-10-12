@@ -28,7 +28,7 @@
             <h2 class="fw-bold text-center pt-3 mb-3">Registro</h2>
 
             <x-validation-errors class="mb-4" />
-
+            
             <form action="{{ route('register') }}" method="POST">
 
                 @csrf
