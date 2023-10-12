@@ -1,7 +1,7 @@
 @extends('layouts.app3')
 
 @section('title')
-    Productos
+    Producto-{{$product->nombre}}
 @endsection
 
 @section('content')
