@@ -18,11 +18,13 @@ Route::view('/miregistro', 'miregister')->name('miregistro');
 
 Route::view('/milogin', 'milogin')->name('milogin');
 
-Route::view('/start', 'start')->name('start');
+Route::view('/start', 'start')->name('start')->middleware('auth');
 
-Route::resource('/publicacion', PublicacionController::class);
+Route::view('/perfil', 'perfil')->name('perfil');
 
-Route::resource('/product', ProductController::class);
+Route::resource('/publicacion', PublicacionController::class)->middleware('auth');
+
+Route::resource('/product', ProductController::class)->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',

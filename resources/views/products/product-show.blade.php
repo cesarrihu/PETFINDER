@@ -25,11 +25,12 @@
                             <div class="col-4 ms-5">
                     <a href="{{ route('product.index') }}" class="btn btn-primary">Volver a todos los productos</a>
                 </div>
-
+                @if(Auth::user()->tipo == 'admin')
                     <div class="col-4">
                     <a href="{{ route('product.edit', $product) }}" class="btn btn-secondary">Editar producto</a>
                     </div>
-                    
+                @endif
+                    @if(Auth::user()->tipo == 'admin')
                     <div class="col-4 ">
                     <form action="{{ route('product.destroy', $product) }}" method="POST">
                         @csrf
@@ -37,6 +38,7 @@
                         <button type="submit" class="btn btn-danger ">Borrar</button>
                     </form>
                 </div>
+                @endif
             </div>
         </div>
                 </div>

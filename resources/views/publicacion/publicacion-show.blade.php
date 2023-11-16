@@ -13,7 +13,7 @@
                 
                 <div class="card-body bg-white mt-3 mb-3">
                     <div class="container mt-5 mb-5">
-                        <img src="{{ asset('img/image_3.jpg') }}" class="card-img-top"
+                        <img src="{{ asset('img/temporalM.jpg') }}" class="card-img-top"
                         alt="aqui va la imagen de la mascota">
                     </div>
 
@@ -27,11 +27,10 @@
                             <div class="col-4 ms-5">
                                 <a href="{{ route('publicacion.index') }}" class="btn btn-primary">Volver a las publicaciones</a>
                             </div>
-
+                            @if(Auth::user()->tipo == 'admin')
                             <div class="col-4">
                                 <a href="{{route('publicacion.edit', $publicacion)}}" class="btn btn-secondary">Editar publicacion</a>
                             </div>
-
                             <div class="col-4">
                                 <!-- Formulario para borrar la publicación -->
                                 <form action="{{ route('publicacion.destroy', $publicacion) }}" method="POST">
@@ -40,6 +39,7 @@
                                     <button type="submit" class="btn btn-danger mb-4">Borrar</button>
                                 </form>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

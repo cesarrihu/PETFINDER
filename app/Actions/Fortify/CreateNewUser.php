@@ -25,11 +25,16 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
-
+    
+        // Verificar si el correo contiene "@admin.com"
+    
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'tipo' => 'user', // Asignar el valor 0 al campo is_admin
         ]);
     }
+    
+    
 }

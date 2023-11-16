@@ -21,7 +21,6 @@
         </ul>
     </div>
     @endif
-
     <form class="mt-3" action="{{ route('product.store') }}" method="POST">
         @csrf
         <div class="mb-2">

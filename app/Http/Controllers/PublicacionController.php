@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publicacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PublicacionController extends Controller
 {
@@ -22,6 +23,11 @@ class PublicacionController extends Controller
      */
     public function create()
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
+ 
+
         return view('publicacion/publicacion-create');
     }
 
@@ -69,6 +75,9 @@ class PublicacionController extends Controller
      */
     public function edit(Publicacion $publicacion)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
         return view('publicacion/publicacion-edit', compact('publicacion'));
     }
 
@@ -102,6 +111,10 @@ class PublicacionController extends Controller
      */
     public function destroy(Publicacion $publicacion)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
+
         $publicacion->delete();
         return redirect()->route('publicacion.index');
     }

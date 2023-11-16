@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 
 class ProductController extends Controller
 {
@@ -23,8 +23,13 @@ class ProductController extends Controller
      */
     public function create()
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
+    
         return view('products/product-create');
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -64,6 +69,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
+
         return view('products/product-edit', compact('product'));
     }
 
@@ -94,6 +103,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if (! Gate::allows('admin')) {
+            abort(403);
+        }
+
         $product->delete();
         return redirect()->route('product.index');
     }

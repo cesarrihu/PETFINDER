@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary bg-warning border-3 border-bottom border-success">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{route('miwelcome')}}">
+      <a class="navbar-brand" href="{{route('start')}}">
         <img src="{{asset('img/logo.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         PetFinder
       </a>
@@ -9,6 +9,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          @if(Auth::user()->tipo == 'admin')
+          <li class="nav-item">
+            <a class="nav-link {{ request()->route()->getName() === 'start' ? 'active' : '' }}" aria-current="page" href="{{route('start')}}">Panel de administrador</a>
+          </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link {{ request()->route()->getName() === 'start' ? 'active' : '' }}" aria-current="page" href="{{route('start')}}">Inicio</a>
           </li>
@@ -20,7 +25,9 @@
               <li><a class="dropdown-item" href="{{route('publicacion.index')}}">Todas las mascotas</a></li>
               <li><a class="dropdown-item" href="#">Canino</a></li>
               <li><a class="dropdown-item" href="#">Felino</a></li>
+              @if(Auth::user()->tipo == 'admin')
               <li><a class="dropdown-item" href="{{route('publicacion.create')}}">Crear mascota</a></li>
+              @endif            
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -29,7 +36,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{route('product.index')}}">Ver productos</a></li>
+              @if(Auth::user()->tipo == 'admin')
               <li><a class="dropdown-item" href="{{route('product.create')}}">Crear producto</a></li>
+              @endif
             </ul>
           </li>
         </ul>

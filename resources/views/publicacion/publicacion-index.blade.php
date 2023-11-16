@@ -16,7 +16,7 @@
                         <div
                             class="container w-75 mt-5 rounded shadow mb-5 border border-success border-3 bg-success-subtle d-flex justify-content-center">
                             <div class="card mt-3 mb-3 w-100">
-                                <img src="{{ asset('img/image_3.jpg') }}" class="card-img-top"
+                                <img src="{{ asset('img/temporalM.jpg') }}" class="card-img-top"
                                     alt="aqui va la imagen de la mascota">
                                 <div class="card-header  d-flex justify-content-center">
                                     {{ $publicacion->nombre }}
@@ -30,7 +30,9 @@
                                 <div class="card-footer d-flex justify-content-center">
                                     <a href="{{ route('publicacion.show', $publicacion->id) }}" class="btn btn-success">Ver
                                         más informacion de la mascota</a>
+                                        @if(Auth::user()->tipo == 'user')    
                                     <a href="#" class="btn ms-1 btn-primary">Me interesa</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
