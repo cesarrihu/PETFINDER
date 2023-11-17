@@ -14,19 +14,30 @@ class PublicacionController extends Controller
     public function index()
     {
         $publicaciones = Publicacion::orderby('id', 'desc')->get();
-    
+
         return view('publicacion/publicacion-index', compact('publicaciones'));
     }
 
+    public function indexCanino()
+    {
+        $publicaciones = Publicacion::where('tipo', 'canino')->orderBy('id', 'desc')->get();
+        return view('publicacion.publicacion-index', compact('publicaciones'));
+    }
+
+    public function indexFelino()
+    {
+        $publicaciones = Publicacion::where('tipo', 'felino')->orderBy('id', 'desc')->get();
+        return view('publicacion.publicacion-index', compact('publicaciones'));
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        if (! Gate::allows('admin')) {
+        if (!Gate::allows('admin')) {
             abort(403);
         }
- 
+
 
         return view('publicacion/publicacion-create');
     }
@@ -37,23 +48,25 @@ class PublicacionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|max:255',
-            'raza' => 'required',
-            'descripcion' => 'required',
-            'edad' => 'required|integer', 
-            'color' => 'nullable',
+            'nombre' => 'text|required|max:255',
+            'raza' => 'text|required|max:255',
+            'descripcion' => 'text|required|max:255',
+            'edad' => 'required|integer|min:0|max:25',
+            'color' => 'text|required|max:255',
+            'tipo' =>  'required|max:255',
         ]);
-    
+
         $publicacion = new Publicacion();
-    
+
         $publicacion->nombre = $request->input('nombre');
         $publicacion->raza = $request->input('raza');
         $publicacion->descripcion = $request->input('descripcion');
         $publicacion->edad = $request->input('edad');
         $publicacion->color = $request->input('color');
-    
+        $publicacion->tipo = $request->input('tipo');
+
         $publicacion->save();
-    
+
         return redirect()->route('publicacion.index');
     }
 
@@ -62,7 +75,7 @@ class PublicacionController extends Controller
      */
     public function show(Publicacion $publicacion) //   
     {
-       // $publicacion = new Publicacion;
+        // $publicacion = new Publicacion;
         //dd ($publicacion);
         return view('publicacion/publicacion-show', compact('publicacion'));
 
@@ -75,7 +88,7 @@ class PublicacionController extends Controller
      */
     public function edit(Publicacion $publicacion)
     {
-        if (! Gate::allows('admin')) {
+        if (!Gate::allows('admin')) {
             abort(403);
         }
         return view('publicacion/publicacion-edit', compact('publicacion'));
@@ -86,23 +99,23 @@ class PublicacionController extends Controller
      */
     public function update(Request $request, Publicacion $publicacion)
     {
-        
+
         $request->validate([
             'nombre' => 'required|max:255',
             'raza' => 'required',
             'descripcion' => 'required',
-            'edad' => 'required|integer', 
+            'edad' => 'required|integer',
             'color' => 'nullable',
         ]);
-        
+
         $publicacion->nombre = $request->input('nombre');
         $publicacion->raza = $request->input('raza');
         $publicacion->descripcion = $request->input('descripcion');
         $publicacion->edad = $request->input('edad');
         $publicacion->color = $request->input('color');
-    
+
         $publicacion->save();
-    
+
         return redirect()->route('publicacion.index');
     }
 
@@ -111,7 +124,7 @@ class PublicacionController extends Controller
      */
     public function destroy(Publicacion $publicacion)
     {
-        if (! Gate::allows('admin')) {
+        if (!Gate::allows('admin')) {
             abort(403);
         }
 

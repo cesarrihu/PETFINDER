@@ -26,6 +26,9 @@ Route::resource('/publicacion', PublicacionController::class)->middleware('auth'
 
 Route::resource('/product', ProductController::class)->middleware('auth');
 
+Route::get('/Canino', [PublicacionController::class, 'indexCanino'])->name('canino')->middleware('auth');
+Route::get('/Felino', [PublicacionController::class, 'indexFelino'])->name('felino')->middleware('auth');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

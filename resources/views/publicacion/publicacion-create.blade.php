@@ -45,8 +45,14 @@
                     <label for="color" class="form-label">Color</label>
                     <input type="text" placeholder="Blanco" class="form-control bg-success-subtle" name="color" value="{{ old('color') }}" required>
                 </div><br>
-            
-
+                <div class="mb-4">
+                    <label for="tipo" class="form-label">Tipo</label>
+                    <select class="form-select bg-success-subtle" name="tipo" required>
+                        <option value="">Selecciona el tipo</option>
+                        <option value="canino" @if(old('tipo') == 'canino') selected @endif>canino</option>
+                        <option value="felino" @if(old('tipo') == 'felino') selected @endif>felino</option>
+                    </select>
+                </div> <br>                     
                 <div class="d-grid">
                     <button type="submit" class="btn btn-success">Guardar publicacion</button>
                 </div>

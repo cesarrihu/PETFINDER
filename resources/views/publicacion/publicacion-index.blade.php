@@ -27,6 +27,9 @@
                                 <div class="card-body  d-flex justify-content-center">
                                     <p class="card-text"><strong>Edad: {{ $publicacion->edad }} año(s)</strong></p>
                                 </div>
+                                <div class="card-body  d-flex justify-content-center">
+                                    <p class="card-text"><strong>Tipo: {{ $publicacion->tipo }}</strong></p>
+                                </div>
                                 <div class="card-footer d-flex justify-content-center">
                                     <a href="{{ route('publicacion.show', $publicacion->id) }}" class="btn btn-success">Ver
                                         más informacion de la mascota</a>

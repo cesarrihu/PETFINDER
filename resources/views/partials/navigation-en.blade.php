@@ -23,8 +23,8 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{route('publicacion.index')}}">Todas las mascotas</a></li>
-              <li><a class="dropdown-item" href="#">Canino</a></li>
-              <li><a class="dropdown-item" href="#">Felino</a></li>
+              <li><a class="dropdown-item" href="{{route('canino')}}">Canino</a></li>
+              <li><a class="dropdown-item" href="{{route('felino')}}">Felino</a></li>
               @if(Auth::user()->tipo == 'admin')
               <li><a class="dropdown-item" href="{{route('publicacion.create')}}">Crear mascota</a></li>
               @endif            
