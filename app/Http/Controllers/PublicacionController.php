@@ -105,4 +105,11 @@ class PublicacionController extends Controller
         $publicacion->delete();
         return redirect()->route('publicacion.index');
     }
+
+    public function inicioPanel()
+    {
+        $publicaciones = Publicacion::orderby('id', 'desc')->get();
+    
+        return view('InicioPanel', compact('publicaciones'));
+    }
 }

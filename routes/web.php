@@ -20,6 +20,9 @@ Route::view('/milogin', 'milogin')->name('milogin');
 
 Route::view('/start', 'start')->name('start');
 
+Route::get('/Panel-Administrador',  [PublicacionController::class, 'InicioPanel'])->name('Panel-Administrador');
+
+
 Route::resource('/publicacion', PublicacionController::class);
 
 Route::resource('/product', ProductController::class);
