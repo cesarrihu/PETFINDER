@@ -28,7 +28,11 @@
 
                 <!-- Foto de Perfil Actual -->
                 <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-full h-20 w-20 object-cover">
+                    @if(Auth::user()->profile_photo_path)
+                    <img src="{{ asset('storage/'.$this->user->profile_photo_path) }}" alt="{{ $this->user->name }}" class="rounded-full h-20 w-20 object-cover">
+                    @else
+                    <img class="irounded-full h-20 w-20 object-cover" src="{{ asset('img/perfilalea.jpg') }}" alt="{{ Auth::user()->name }}" />
+                    @endif
                 </div>
 
                 <!-- Vista Previa de Nueva Foto de Perfil -->

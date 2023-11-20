@@ -57,7 +57,18 @@
                 </ul>
               </li>
         </ul>
-                    
+       
+        
+        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+         @if(Auth::user()->profile_photo_path)     
+        <img class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;" src="{{ asset('storage/'.Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->name }}" />
+        @else
+        <img class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;" src="{{ asset('img/perfilalea.jpg') }}" alt="{{ Auth::user()->name }}" />
+        @endif
+        @endif
+        
+             
+               
       </div>
     </div>
   </nav>
