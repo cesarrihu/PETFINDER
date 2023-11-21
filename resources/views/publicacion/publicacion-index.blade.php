@@ -16,13 +16,14 @@
                         <div
                             class="container w-75 mt-5 rounded shadow mb-5 border border-success border-3 bg-success-subtle d-flex justify-content-center">
                             <div class="card mt-3 mb-3 w-100">
-                                <img src="{{ asset('img/imgPublicacion.png') }}" class="card-img-top"
+
+                                <img src="http://localhost/PETFINDER/storage/app/{{$publicacion->archivo_ubicacion}}" class="card-img-top"
                                     alt="aqui va la imagen de la mascota">
                                 <div class="card-header  d-flex justify-content-center">
                                     {{ $publicacion->nombre }}
                                 </div>
                                 <div class="card-body  d-flex justify-content-center">
-                                    <p class="card-text">Descripcion: {{ $publicacion->descripcion }}</p>
+                                    <p class="card-text">Descripcion: {{ $publicacion->descripcion}}</p>
                                 </div>
                                 <div class="card-body  d-flex justify-content-center">
                                     <p class="card-text"><strong>Edad: {{ $publicacion->edad }} año(s)</strong></p>
@@ -30,7 +31,11 @@
                                 <div class="card-footer d-flex justify-content-center">
                                     <a href="{{ route('publicacion.show', $publicacion->id) }}" class="btn btn-success">Ver
                                         más informacion de la mascota</a>
-                                    <a href="#" class="btn ms-1 btn-primary">Me interesa</a>
+                                        <form method="POST" action="{{ route('publicacion.interes', ['publicacion_id' => $publicacion->id, 'user_id' => $user->id]) }}">
+                                            @csrf
+                                            <button type="submit" class="btn ms-1 btn-primary">Me interesa</button>
+                                        </form>
+                                        
                                 </div>
                             </div>
                         </div>

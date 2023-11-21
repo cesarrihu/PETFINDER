@@ -16,8 +16,8 @@
                         <div
                             class="container w-75 mt-5 rounded shadow mb-5 border border-success border-3 bg-success-subtle d-flex justify-content-center">
                             <div class="card mt-3 mb-3 w-100">
-                                <img src="{{ asset('img/image_3.jpg') }}" class="card-img-top"
-                                    alt="aqui va la imagen del producto">
+                                <img src="http://localhost/PETFINDER/storage/app/{{$product->foto_ubicacionProd}}" class="card-img-top"
+                                    alt="aqui va la imagen del producto" width="300" height="300">
                                 <div class="card-header  d-flex justify-content-center">
                                     {{ $product->nombre }}
                                 </div>

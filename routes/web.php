@@ -24,6 +24,10 @@ Route::get('/Panel-Administrador',  [PublicacionController::class, 'InicioPanel'
 
 
 Route::resource('/publicacion', PublicacionController::class);
+Route::post('/interes/{publicacion_id}', [PublicacionController::class, 'interes'])->name('publicacion.interes');
+Route::get('/publicacion-interesados/{publicacion}', [PublicacionController::class, 'publicacionInteresados'])->name('interesados-publics');
+Route::put('/publicacion/{publicacion}/adoptar', [PublicacionController::class, 'adoptado'])->name('publicacion.adoptar');
+Route::put('/publicacion/{publicacion}/noadoptar', [PublicacionController::class, 'noadoptado'])->name('publicacion.noadoptar');
 
 Route::resource('/product', ProductController::class);
 

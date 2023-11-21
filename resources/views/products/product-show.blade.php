@@ -12,8 +12,8 @@
             <div class="container w-100 rounded shadow mb-5 border border-success border-3 bg-success-subtle d-flex justify-content-center">
                 <div class="card-body bg-white mt-3 mb-3">
                     <div class="container mt-5 mb-5">
-                        <img src="{{ asset('img/image_3.jpg') }}" class="card-img-top"
-                        alt="aqui va la imagen de la mascota">
+                        <img src="http://localhost/PETFINDER/storage/app/{{$product->foto_ubicacionProd}}" class="card-img-top"
+                        alt="aqui va la imagen del producto">
                     </div>
                     <h1 class="card-title d-flex justify-content-center">Nombre: {{$product->nombre}}</h1>
                     <h2 class="card-subtitle mb-2 d-flex justify-content-center">Descripción: {{$product->descripcion}}</h2>

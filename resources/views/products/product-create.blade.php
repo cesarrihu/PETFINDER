@@ -22,14 +22,14 @@
     </div>
     @endif
 
-    <form class="mt-3" action="{{ route('product.store') }}" method="POST">
+    <form class="mt-3" action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-2">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" placeholder="correa de cuero" class="form-control bg-success-subtle" name="nombre" value="{{ old('nombre') }}" required>
         </div><br>
         <div class="mb-2">
-            <label for "descripcion" class="form-label">Descripción</label> <br>
+            <label for="descripcion" class="form-label">Descripción</label> <br>
             <textarea type="text" placeholder="Datos acerca del producto" class="form-control bg-success-subtle" name="descripcion" cols="30" rows="10" required>{{ old('descripcion') }}</textarea>
         </div><br>
         <div class="mb-2">
@@ -40,7 +40,11 @@
             <label for="color" class="form-label">Color</label>
             <input type="text" placeholder="Rojo" class="form-control bg-success-subtle" name="color" value="{{ old('color') }}" required>
         </div><br>
-
+        <div class="mb-3">
+            <label for="archivo2" class="form-label ">Insertar foto para el producto</label>
+            <input class="form-control bg-success-subtle" type="file" name="archivo2" id="archivo2">
+        </div>
+    
         <div class="d-grid">
             <button type="submit" class="btn btn-success">Guardar producto</button>
         </div>

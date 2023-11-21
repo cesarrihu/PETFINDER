@@ -23,7 +23,7 @@
                 </div>
                 @endif
 
-            <form action="{{route('publicacion.store')}}" method="POST">
+            <form action="{{route('publicacion.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -45,6 +45,10 @@
                     <label for="color" class="form-label">Color</label>
                     <input type="text" placeholder="Blanco" class="form-control bg-success-subtle" name="color" value="{{ old('color') }}" required>
                 </div><br>
+                <div class="mb-3">
+                    <label for="archivo" class="form-label ">Insertar foto para la mascota</label>
+                    <input class="form-control bg-success-subtle" type="file" name="archivo" id="archivo">
+                </div>
             
 
                 <div class="d-grid">
