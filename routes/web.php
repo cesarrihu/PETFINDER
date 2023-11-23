@@ -18,7 +18,7 @@ Route::view('/miregistro', 'miregister')->name('miregistro');
 
 Route::view('/milogin', 'milogin')->name('milogin');
 
-Route::view('/start', 'start')->name('start')->middleware('auth');
+Route::view('/start', 'start')->name('start')->middleware(['auth', 'verified']);
 
 Route::view('/perfil', 'perfil')->name('perfil');
 
