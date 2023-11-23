@@ -23,7 +23,7 @@
                 </div>
                 @endif
 
-            <form action="{{route('publicacion.store')}}" method="POST">
+            <form action="{{route('publicacion.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -53,6 +53,12 @@
                         <option value="felino" @if(old('tipo') == 'felino') selected @endif>felino</option>
                     </select>
                 </div> <br>                     
+                <div class="mb-3">
+                    <label for="archivo" class="form-label ">Insertar foto para la mascota</label>
+                    <input class="form-control bg-success-subtle" type="file" name="archivo" id="archivo">
+                </div>
+            
+
                 <div class="d-grid">
                     <button type="submit" class="btn btn-success">Guardar publicacion</button>
                 </div>

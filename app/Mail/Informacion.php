@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\Publicacion;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -17,7 +18,7 @@ class Informacion extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(Publicacion $publi)
+    public function __construct(Publicacion $publi, User $user)
     {
         //
     }

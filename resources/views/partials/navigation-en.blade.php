@@ -11,7 +11,7 @@
         <ul class="navbar-nav">
           @if(Auth::user()->tipo == 'admin')
           <li class="nav-item">
-            <a class="nav-link {{ request()->route()->getName() === 'start' ? 'active' : '' }}" aria-current="page" href="{{route('start')}}">Panel de administrador</a>
+            <a class="nav-link {{ request()->route()->getName() === 'Panel-Administrador' ? 'active' : '' }}" aria-current="page" href="{{route('Panel-Administrador')}}">Panel de administrador</a>
           </li>
           @endif
           <li class="nav-item">

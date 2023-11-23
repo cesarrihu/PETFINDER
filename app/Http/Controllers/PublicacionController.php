@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Informacion;
 use App\Models\Publicacion;
+use App\Models\Status;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -13,9 +17,10 @@ class PublicacionController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
         $publicaciones = Publicacion::orderby('id', 'desc')->get();
-
-        return view('publicacion/publicacion-index', compact('publicaciones'));
+    
+        return view('publicacion/publicacion-index', compact('publicaciones', 'user'));
     }
 
     public function indexCanino()
@@ -48,11 +53,11 @@ class PublicacionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'text|required|max:255',
-            'raza' => 'text|required|max:255',
-            'descripcion' => 'text|required|max:255',
+            'nombre' => 'required|max:255',
+            'raza' => 'required|max:255',
+            'descripcion' => 'required|max:255',
             'edad' => 'required|integer|min:0|max:25',
-            'color' => 'text|required|max:255',
+            'color' => 'required|max:255',
             'tipo' =>  'required|max:255',
         ]);
 
@@ -64,8 +69,16 @@ class PublicacionController extends Controller
         $publicacion->edad = $request->input('edad');
         $publicacion->color = $request->input('color');
         $publicacion->tipo = $request->input('tipo');
+        $publicacion->archivo_nombre = $request->file('archivo')->getClientOriginalName();
+        $publicacion->archivo_ubicacion = $request->file('archivo')->store('imgPublicaciones');
 
         $publicacion->save();
+    
+            // Crear una nueva instancia de Status con el estado por defecto 'noAdoptado'
+        $status = new Status(['status' => 'No Adoptado']);
+
+        // Asociar la publicación recién creada con el estado
+        $publicacion->status()->save($status);
 
         return redirect()->route('publicacion.index');
     }
@@ -130,5 +143,47 @@ class PublicacionController extends Controller
 
         $publicacion->delete();
         return redirect()->route('publicacion.index');
+    }
+
+    public function inicioPanel()
+    {
+        $publicaciones = Publicacion::orderby('id', 'desc')->get();
+    
+        return view('InicioPanel', compact('publicaciones'));
+    }
+    
+    public function interes($publicacion_id)
+{
+    
+    $publicacion = Publicacion::find($publicacion_id);
+
+    $user = auth()->user();
+
+    $publicacion->users()->syncWithoutDetaching([$user->id]);
+
+    Mail::to($user->email)->send(new Informacion($publicacion, $user));
+
+    return redirect()->back()->with('success', 'Te has interesado en la publicación.');
+    }
+
+    public function publicacionInteresados(Publicacion $publicacion)
+    {
+
+        return view('publicacion-interesados', compact('publicacion'));
+    }
+
+        public function adoptado(Publicacion $publicacion)
+    {
+        $publicacion->status->update(['status' => 'Adoptado']);
+
+        return redirect()->back();
+    }
+
+    
+    public function noadoptado(Publicacion $publicacion)
+    {
+        $publicacion->status->update(['status' => 'No Adoptado']);
+
+        return redirect()->back();
     }
 }

@@ -22,7 +22,18 @@ Route::view('/start', 'start')->name('start')->middleware(['auth', 'verified']);
 
 Route::view('/perfil', 'perfil')->name('perfil');
 
+Route::get('/Panel-Administrador',  [PublicacionController::class, 'InicioPanel'])->name('Panel-Administrador')->middleware('auth');
+
+
 Route::resource('/publicacion', PublicacionController::class)->middleware('auth');
+
+Route::post('/interes/{publicacion_id}', [PublicacionController::class, 'interes'])->name('publicacion.interes')->middleware('auth');
+
+Route::get('/publicacion-interesados/{publicacion}', [PublicacionController::class, 'publicacionInteresados'])->name('interesados-publics')->middleware('auth');
+
+Route::put('/publicacion/{publicacion}/adoptar', [PublicacionController::class, 'adoptado'])->name('publicacion.adoptar')->middleware('auth');
+
+Route::put('/publicacion/{publicacion}/noadoptar', [PublicacionController::class, 'noadoptado'])->name('publicacion.noadoptar')->middleware('auth');
 
 Route::resource('/product', ProductController::class)->middleware('auth');
 

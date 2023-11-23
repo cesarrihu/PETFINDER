@@ -49,6 +49,8 @@ class ProductController extends Controller
         $product->descripcion = $request->input('descripcion');
         $product->precio = $request->input('precio');
         $product->color = $request->input('color');
+        $product->foto_nombreProd = $request->file('archivo2')->getClientOriginalName();
+        $product->foto_ubicacionProd = $request->file('archivo2')->store('imgProductos');
 
         $product->save();
 
