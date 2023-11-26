@@ -18,7 +18,7 @@ class Informacion extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(Publicacion $publi, User $user)
+    public function __construct(public Publicacion $publi, public User $user)
     {
         //
     }
@@ -42,7 +42,7 @@ class Informacion extends Mailable
             view: 'emails.Informaciondeadopcion',
         );
     }
-
+    
     /**
      * Get the attachments for the message.
      *
