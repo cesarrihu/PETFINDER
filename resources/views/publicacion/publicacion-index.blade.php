@@ -9,6 +9,10 @@
         <h1 class="display-4"><strong>Todas las mascotas en busqueda de un hogar:</strong></h1>
         </div>
 
+        <div id="success-alert" class="alert alert-success" style="display: none; position: fixed; top: 20px; right: 20px; width: 200px; padding: 10px;">
+            <!-- Aquí se mostrará el mensaje de éxito -->
+        </div>
+
         @foreach ($publicaciones->chunk(3) as $publicacionChunk)
             <div class="row">
                 @foreach ($publicacionChunk as $publicacion)
@@ -47,4 +51,25 @@
                 @endforeach
             </div>
         @endforeach
+
+        <script>
+            // Función para mostrar la alerta
+            function showSuccessAlert(message) {
+                const alertDiv = document.getElementById('success-alert');
+                alertDiv.textContent = message;
+                alertDiv.style.display = 'block';
+    
+                // Ocultar la alerta después de 5 segundos
+                setTimeout(function() {
+                    alertDiv.style.display = 'none';
+                }, 5000); // 5000 milisegundos = 5 segundos
+            }
+    
+            // Llamada a la función showSuccessAlert si hay un mensaje de éxito en la sesión
+            @if(session('success'))
+                showSuccessAlert('{{ session('success') }}');
+            @endif
+
+        </script>
+        
     @endsection

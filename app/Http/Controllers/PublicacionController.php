@@ -82,7 +82,7 @@ class PublicacionController extends Controller
         // Asociar la publicación recién creada con el estado
         $publicacion->status()->save($status);
 
-        return redirect()->route('publicacion.index');
+        return redirect()->route('publicacion.index')->with('success', 'Mascota creada correctamente');
     }
 
     /**
@@ -131,7 +131,7 @@ class PublicacionController extends Controller
 
         $publicacion->save();
 
-        return redirect()->route('publicacion.index');
+        return redirect()->route('publicacion.index')->with('success', 'Mascota actualizada correctamente');
     }
 
     /**

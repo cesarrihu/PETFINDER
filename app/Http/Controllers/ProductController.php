@@ -54,7 +54,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success', '¡El Producto esta disponible en tu pagina!');
 
     }
 
@@ -97,7 +97,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success', '¡El Producto se actualizo correctamente!');
     }
 
     /**
