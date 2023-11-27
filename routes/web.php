@@ -4,7 +4,7 @@ use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StripeController;
 
 Route::view('/', 'miwelcome')->name('miwelcome');
 
@@ -40,6 +40,10 @@ Route::resource('/product', ProductController::class)->middleware('auth');
 Route::get('/Canino', [PublicacionController::class, 'indexCanino'])->name('canino')->middleware('auth');
 Route::get('/Felino', [PublicacionController::class, 'indexFelino'])->name('felino')->middleware('auth');
 
+Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::get('/success', [StripeController::class, 'success'])->name('success')->middleware('auth');
+Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel')->middleware('auth');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -49,3 +53,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+

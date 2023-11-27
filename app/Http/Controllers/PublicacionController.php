@@ -25,14 +25,16 @@ class PublicacionController extends Controller
 
     public function indexCanino()
     {
+        $user = auth()->user();
         $publicaciones = Publicacion::where('tipo', 'canino')->orderBy('id', 'desc')->get();
-        return view('publicacion.publicacion-index', compact('publicaciones'));
+        return view('publicacion.publicacion-index', compact('publicaciones', 'user'));
     }
 
     public function indexFelino()
     {
+        $user = auth()->user();
         $publicaciones = Publicacion::where('tipo', 'felino')->orderBy('id', 'desc')->get();
-        return view('publicacion.publicacion-index', compact('publicaciones'));
+        return view('publicacion.publicacion-index', compact('publicaciones', 'user'));
     }
     /**
      * Show the form for creating a new resource.
