@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeController;
+use Illuminate\Support\Facades\Auth;
 
 Route::view('/', 'miwelcome')->name('miwelcome');
 
@@ -54,3 +56,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])->name('auth.redirect');
+ 
+Route::get('/auth/callback', [AuthController::class, 'callback'])->name('callback.redirect');
