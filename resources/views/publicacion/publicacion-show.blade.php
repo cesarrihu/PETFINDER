@@ -14,8 +14,13 @@
                 <div class="card-body bg-white mt-3 mb-3">
 
                     <div class="container mt-5 mb-5">
+                        @if($publicacion->archivo_ubicacion)
                         <img src="http://localhost/PETFINDER/storage/app/{{$publicacion->archivo_ubicacion}}" class="card-img-top"
                         alt="aqui va la imagen de la mascota">
+                        @else
+                        <img src="{{ asset('img/imgPublicacion.png') }}" class="card-img-top"
+                        alt="aqui va la imagen de la mascota">
+                        @endif
                     </div>
                    
 

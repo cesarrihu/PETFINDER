@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <<div class="container text-center mt-3">
+    <div class="container text-center mt-3">
         <h1 class="display-4"><strong>Todas las mascotas en busqueda de un hogar:</strong></h1>
         </div>
 
@@ -21,8 +21,8 @@
                             class="container w-75 mt-5 rounded shadow mb-5 border border-success border-3 bg-success-subtle d-flex justify-content-center">
                             <div class="card mt-3 mb-3 w-100">
 
-                                <img src="http://localhost/PETFINDER/storage/app/{{$publicacion->archivo_ubicacion}}" class="card-img-top"
-                                    alt="aqui va la imagen de la mascota">
+                                <img src="http://localhost/PETFINDER/storage/app/{{$publicacion->archivo_ubicacion}} " class="card-img-top"
+                                    alt="aqui va la imagen de la mascota" width="300" height="300">
                                 <div class="card-header  d-flex justify-content-center">
                                     {{ $publicacion->nombre }}
                                 </div>

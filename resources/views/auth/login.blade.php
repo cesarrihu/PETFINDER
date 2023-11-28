@@ -58,41 +58,24 @@
                 </div>
             </form>
 
-            <div class="container w-100 my-5">
-                <div class="row text-center">
-                    <div>Iniciar sesion con:</div>
-                </div>
+            <div class="container w-100 my-5 text-center">
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-outline-primary w-100 my-1" >
-                            <div class="row align-items-center">
+                        <div>Iniciar sesión con:</div>
+                        <a href="{{route('auth.redirect')}}">
+                        <button class="btn btn-outline-primary my-3">
+                            <div class="row align-items-center justify-content-center">
                                 <div class="col-2">
                                     <img src="{{asset('img/face.png')}}" width="32" alt="">
                                 </div>
-
-                                <div class="col-10 text-center">
+                                <div class="col-10">
                                     Facebook
                                 </div>
-
                             </div>
                         </button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-outline-danger w-100 my-1" >
-                            <div class="row align-items-center">
-                                <div class="col-2">
-                                    <img src="{{asset('img/google.png')}}" width="32" alt="">
-                                </div>
-
-                                <div class="col-10 text-center">
-                                    Google
-                                </div>
-
-                            </div>
-                        </button>
+                    </a>
                     </div>
                 </div>
-
             </div>
     </div>
 </div>
