@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Provedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -23,11 +24,12 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $provedores = Provedor::all();
         if (! Gate::allows('admin')) {
             abort(403);
         }
     
-        return view('products/product-create');
+        return view('products/product-create', compact('provedores'));
     }
     
 
@@ -52,7 +54,10 @@ class ProductController extends Controller
         $product->foto_nombreProd = $request->file('archivo2')->getClientOriginalName();
         $product->foto_ubicacionProd = $request->file('archivo2')->store('imgProductos');
 
-        $product->save();
+        $provedor = Provedor::find($request->provedor_id);
+        $provedor->productos()->save($product);
+
+        //$product->save();
 
         return redirect()->route('product.index')->with('success', '¡El Producto esta disponible en tu pagina!');
 

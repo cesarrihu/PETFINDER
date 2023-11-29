@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProvedorController;
+use App\Models\Provedor;
 
 Route::view('/', 'miwelcome')->name('miwelcome');
 
@@ -46,6 +48,7 @@ Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout'
 Route::get('/success', [StripeController::class, 'success'])->name('success')->middleware('auth');
 Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel')->middleware('auth');
 
+Route::resource('provedor', ProvedorController::class)->middleware('auth');;
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

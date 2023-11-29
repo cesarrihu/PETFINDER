@@ -38,6 +38,8 @@
               <li><a class="dropdown-item" href="{{route('product.index')}}">Ver productos</a></li>
               @if(Auth::user()->tipo == 'admin')
               <li><a class="dropdown-item" href="{{route('product.create')}}">Crear producto</a></li>
+              <li><a class="dropdown-item" href="{{route('provedor.create')}}">Crear provedor</a></li>
+              <li><a class="dropdown-item" href="{{route('provedor.index')}}">Ver provedores</a></li>
               @endif
             </ul>
           </li>

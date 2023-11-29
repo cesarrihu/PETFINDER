@@ -44,7 +44,17 @@
             <label for="archivo2" class="form-label ">Insertar foto para el producto</label>
             <input class="form-control bg-success-subtle" type="file" name="archivo2" id="archivo2">
         </div>
-    
+        <div>
+            <label for="provedor_id">Provedor:</label><br>
+            <select name="provedor_id" class="form-select">
+                @foreach ($provedores as $provedor)
+                    <option value="{{ $provedor->id }}">
+                        {{ $provedor->provedorNombre }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <br>
         <div class="d-grid">
             <button type="submit" class="btn btn-success">Guardar producto</button>
         </div>
